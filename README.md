@@ -3,8 +3,8 @@
 Nagios utility for interrograting jenkins
 
 ```
-git clone  https://gitlab.herts.ac.uk/checkjenky
-cd chekjenky
+git clone  https://gitlab.herts.ac.uk/nagios-check-jenkins-py
+cd nagios-check-jenkins-py
 python3 -m venv  checkjenky-venv
 ./checkjenky-venv/bin/activate
 pip  install -r requirements.txt
@@ -29,18 +29,18 @@ Is using jenkins api for nagios.
 
 ##  Usage
 ```
-./checkjenky.py -h
-usage: checkjenky.py [-h] [-j JOBS [JOBS ...]] [-u URL] [--user USER]
-                     [--password PASSWORD]
+usage: checkjenky.py [-h] [-j JOBS [JOBS ...]] [--url URL] [--user USER]
+                     [--password PASSWORD] [--list] [--all]
 
 optional arguments:
   -h, --help            show this help message and exit
   -j JOBS [JOBS ...], --jobs JOBS [JOBS ...]
                         "Jenkins Job name"
-  -u URL, --url URL     default: https://jenkins.herts.ac.uk:8083
+  --url URL             default: https://jenkins:8083
   --user USER           user, default will be guest
   --password PASSWORD   password, default will be guest
-
+  --list                list all the jobs on your jenkins server
+  --all                 will get all jobs from jenkins and report on them
 ```
 
 ##  Obtaining the status of the last  build ( or notification if DISABLED)

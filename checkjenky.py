@@ -2,7 +2,7 @@
 import argparse
 import sys
 from jenkinsapi.jenkins import Jenkins
-defaulturl = "https://jenkins.herts.ac.uk:8083"
+defaulturl = "https://jenkins:8083"
 # jobs set here for testing/verification
 jobs = [
     "(vcl-la-rwa03) Import notification logs",
@@ -34,10 +34,12 @@ parser.add_argument(
 parser.add_argument(
     "--list",
     action="store_true",
+    help="list all the jobs on your jenkins server",
 )
 parser.add_argument(
     "--all",
     action="store_true",
+    help="will get all jobs from jenkins and report on them",
 )
 args = parser.parse_args()
 if args.jobs == None:
